@@ -12,6 +12,8 @@ Route::get('/profiles/{id}', [profileController::class,'show'])
 ->where('id','\d+')
 ->name('profiles.show');
 Route::get('/infos', [infosController::class,'index'])->name('infos.index');
+Route::get('/profiles/create', [profileController::class,'create'])->name('create');
+Route::post('/profiles/store', [profileController::class,'store'])->name('store');
 
 
 

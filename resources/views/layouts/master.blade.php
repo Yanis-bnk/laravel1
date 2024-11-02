@@ -8,15 +8,15 @@
     <title>BNK SHOOP | @yield('title')</title>
 </head>
 <body>
-    @include('parties.nav')
+    @include('components.nav')
    <main>
-    <div class="m-3">
+    <div class="container">
          @yield('main')
         </div>
    
    </main>
    
 
-    @include('parties.footer')
+    @include('components.footer')
 </body>
 </html>
