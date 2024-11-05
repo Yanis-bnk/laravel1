@@ -11,7 +11,8 @@
     @include('components.nav')
    <main>
     <div class="container">
-         @yield('main')
+       @include('parties.flashback')
+        @yield('main')
         </div>
    
    </main>
