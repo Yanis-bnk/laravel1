@@ -28,6 +28,11 @@ class profileController extends Controller
         $bio=$request->bio;
         $name=$request->name;
         //insertion
+        $request->validate([
+             'name'=>'required|min:3',
+             'email'=>'required|email|unique:profiles'
+
+        ]);
         profile::create([
             'name'=>$name,
             'email'=>$email,
