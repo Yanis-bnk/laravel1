@@ -40,6 +40,10 @@
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="password">
     </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password confirmation</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
+    </div>
     <div class="mb-3 ">
         <label for="exampleInputPassword1" class="form-label">Bio</label>
         <textarea name="bio" id="" cols="15" rows="5" class="form-control"></textarea>
