@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileRequest;
 use App\Models\profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,21 +23,14 @@ class profileController extends Controller
     public function create(){
         return view('profiles.create');
     }
-    public function store(Request $request){
+    public function store(ProfileRequest $request){
         //$name=$request->name;
         //$password=$request->password;
         //$email=$request->email;
         //$bio=$request->bio;
         //$name=$request->name;
         //insertion
-        $formFileds=$request->validate([
-             'name'=>'required|min:3',
-             'email'=>'required|email|unique:profiles',
-             'password'=>'required|min:9|max:40|confirmed',
-             'bio'=>'required'
-            
-
-        ]);
+        $formFileds=$request->validated();
         $password=$request->password;
         
          $formFileds['password']=Hash::make($request->password);
@@ -50,4 +44,5 @@ class profileController extends Controller
         
       return redirect()->route('profiles.index')->with('success','votre compte a ete creer avec succes');
     }
+    
 }
